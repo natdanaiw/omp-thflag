@@ -76,39 +76,35 @@
     "alignment": "right",
     "segments": [
         {
-        "type": "sysinfo",
+        "type": "executiontime",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_red",
         "foreground": "p:thai_white",
         "properties": {
-            "cpu_icon": "",
-            "mem_icon": "",
-            "template": "{{.CPU.Used}}% CPU {{.Memory.Used}}/{{.Memory.Total}} RAM"
-        }
+            "style": "austin",
+            "threshold": 0
+        },
+        "template": "{{.FormattedMs}}"
     },
     {
-        "type": "executiontime",
+        "type": "time",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_white",
         "foreground": "p:black",
         "properties": {
-            "style": "austin",
-            "threshold": 0
+            "time_format": "02/01/06 15:04"
         },
-        "template": "{{.FormattedMs}}"
+        "template": "{{.CurrentDate | date .Format}}"
         },
         {
-        "type": "time",
+        "type": "text",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_blue",
         "foreground": "p:thai_white",
-        "properties": {
-            "time_format": "02/01/06 15:04"
-        },
-        "template": "{{.CurrentDate | date .Format}}"
+        "template": " "
         }
     ]
 },
