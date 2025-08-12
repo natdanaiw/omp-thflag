@@ -20,5 +20,8 @@ This project provides a custom prompt theme for [Oh My Posh](https://ohmyposh.de
 ## Preview
 ![Thailand Flag Oh My Posh Theme Preview](preview.png)
 
+## Reference
+This theme is inspired by the "hul10" theme, which is included out of the box with Oh My Posh.
+
 ## License
 MIT
