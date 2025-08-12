@@ -76,35 +76,39 @@
     "alignment": "right",
     "segments": [
         {
-        "type": "executiontime",
+        "type": "sysinfo",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_red",
         "foreground": "p:thai_white",
         "properties": {
-            "style": "austin",
-            "threshold": 0
-        },
-        "template": "{{.FormattedMs}}"
+            "cpu_icon": "",
+            "mem_icon": "",
+            "template": "{{.CPU.Used}}% CPU {{.Memory.Used}}/{{.Memory.Total}} RAM"
+        }
     },
     {
-        "type": "time",
+        "type": "executiontime",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_white",
         "foreground": "p:black",
         "properties": {
-            "time_format": "02/01/06 15:04"
+            "style": "austin",
+            "threshold": 0
         },
-        "template": "{{.CurrentDate | date .Format}}"
+        "template": "{{.FormattedMs}}"
         },
         {
-        "type": "text",
+        "type": "time",
         "style": "powerline",
         "powerline_symbol": "",
         "background": "p:thai_blue",
         "foreground": "p:thai_white",
-        "template": " "
+        "properties": {
+            "time_format": "02/01/06 15:04"
+        },
+        "template": "{{.CurrentDate | date .Format}}"
         }
     ]
 },
