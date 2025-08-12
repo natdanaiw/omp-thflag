@@ -13,17 +13,13 @@
     "newline": true,
     "segments": [
         {
-        "type": "text",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "transparent",
         "foreground": "p:thai_white",
-        "template": "\u250c"
+        "style": "plain",
+        "template": "\u250c",
+        "type": "text"
     },
     {
-        "type": "os",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_red",
         "foreground": "p:thai_white",
         "properties": {
@@ -32,42 +28,40 @@
             "ubuntu": "\uf31b",
             "macos": "\uf179"
         },
-        "template": " {{.Icon}}{{if .WSL}} (WSL){{end}} "
+        "style": "plain",
+        "template": " {{.Icon}}{{if .WSL}} (WSL){{end}}\u2800",
+        "type": "os"
     },
     {
-        "type": "shell",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_white",
         "foreground": "p:black",
-        "template": " \uf489 {{.Name}} "
+        "style": "plain",
+        "template": " \uf489 {{.Name}}\u2800",
+        "type": "shell"
     },
     {
-        "type": "session",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_blue",
         "foreground": "p:thai_white",
-        "template": " \uf2c0 {{.HostName}}\ue0bd{{.UserName}} "
+        "style": "plain",
+        "template": " \uf2c0 {{.HostName}}\ue0bd{{.UserName}}\u2800",
+        "type": "session"
     },
     {
-        "type": "git",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_white",
         "foreground": "p:black",
         "properties": {
             "branch_icon": " \ue0a0 "
         },
-        "template": "{{.HEAD}} "
+        "style": "plain",
+        "template": "{{.HEAD}}\u2800",
+        "type": "git"
         },
         {
-        "type": "text",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_red",
         "foreground": "p:thai_white",
-        "template": " "
+        "style": "plain",
+        "template": " ",
+        "type": "text"
         }
     ]
 },
@@ -76,35 +70,32 @@
     "alignment": "right",
     "segments": [
         {
-        "type": "executiontime",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_red",
         "foreground": "p:thai_white",
         "properties": {
             "style": "austin",
             "threshold": 0
         },
-        "template": "{{.FormattedMs}}"
+        "style": "plain",
+        "template": "{{.FormattedMs}}",
+        "type": "executiontime"
     },
     {
-        "type": "time",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_white",
         "foreground": "p:black",
         "properties": {
             "time_format": "02/01/06 15:04"
         },
-        "template": "{{.CurrentDate | date .Format}}"
+        "style": "plain",
+        "template": "<p:thai_blue> · </>{{.CurrentDate | date .Format}}",
+        "type": "time"
         },
         {
-        "type": "text",
-        "style": "powerline",
-        "powerline_symbol": "",
         "background": "p:thai_blue",
         "foreground": "p:thai_white",
-        "template": " "
+        "style": "plain",
+        "template": " ",
+        "type": "text"
         }
     ]
 },
@@ -114,18 +105,17 @@
     "newline": true,
     "segments": [
         {
-        "type": "path",
-        "style": "powerline",
-        "powerline_symbol": "",
-        "background": "p:thai_red",
+        "background": "transparent",
         "foreground": "p:thai_white",
         "properties": {
             "folder_icon": "\uf07b",
-            "folder_separator_icon": "»",
+            "folder_separator_template": "<p:thai_white> \u00bb </>",
             "home_icon": "\ueb06",
             "style": "agnoster"
         },
-        "template": "{{.Path}}"
+        "style": "plain",
+        "template": "<p:thai_red>\u2514</><p:thai_white>[</> {{.Path}} <p:thai_white>]</>",
+        "type": "path"
     }
 ]
 },
@@ -135,8 +125,7 @@
 "newline": true,
 "segments": [
     {
-        "type": "status",
-        "style": "plain",
+        "background": "transparent",
         "foreground": "p:thai_blue",
         "foreground_templates": [
             "{{if gt .Code 0}}p:thai_red{{end}}"
@@ -144,7 +133,9 @@
         "properties": {
             "always_enabled": true
         },
-        "template": "\u276f"
+        "style": "plain",
+        "template": "\u276f",
+        "type": "status"
     }
 ]
 }
